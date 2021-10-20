@@ -13,6 +13,8 @@ yarn add excel-cloner
 See test file at test/template-1.test.ts
 
 ```
+    import { getWorksheetCloner } from 'excel-cloner';
+
     // Init cloner from template file
     const { cloner, workbook } = await getWorksheetCloner(
       'templates/01.xlsx',
@@ -61,4 +63,5 @@ See test file at test/template-1.test.ts
 ### Result
 
 ![Result](https://i.imgur.com/JbscOXg.png)
+
 # excel-cloner
