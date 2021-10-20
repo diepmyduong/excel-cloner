@@ -63,5 +63,3 @@ See test file at test/template-1.test.ts
 ### Result
 
 ![Result](https://i.imgur.com/JbscOXg.png)
-
-# excel-cloner
