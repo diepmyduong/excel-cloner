@@ -32,7 +32,11 @@
     "trailingComma": "es5"
   },
   "name": "excel-cloner",
-  "author": "diepmyduong@outlook.com.vn",
+  "author": "diepmyduong@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/diepmyduong/excel-cloner.git"
+  },
   "module": "dist/excel-cloner.esm.js",
   "size-limit": [
     {
