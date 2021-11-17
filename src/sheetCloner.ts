@@ -44,10 +44,10 @@ export const getWorksheetCloner = async (
   const baseWorkbook = new Workbook();
   await baseWorkbook.xlsx.readFile(templatePath);
   const workbook = new Workbook();
-  const reportSheet = workbook.addWorksheet(destSheetName);
+  const destSheet = workbook.addWorksheet(destSheetName);
   const cloner = new SheetCloner(
     baseWorkbook.getWorksheet(baseSheetName),
-    reportSheet
+    destSheet
   );
   cloner.cloneWidth();
   return { cloner, workbook };
