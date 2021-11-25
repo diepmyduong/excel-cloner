@@ -384,20 +384,25 @@ export class WorkSheetHelper {
         cellRange.right
       );
     }
-
     // Move an image
-    this.worksheet.getImages().forEach(image => {
-      const rng = image.range;
-      if (
-        rng.tl.row <= +cellSrc.row &&
-        rng.br.row >= +cellSrc.row &&
-        rng.tl.col <= +cellSrc.col &&
-        rng.br.col >= +cellSrc.col
-      ) {
-        rng.tl.row += +cellDest.row - +cellSrc.row;
-        rng.br.row += +cellDest.row - +cellSrc.row;
-      }
-    });
+    // sheetSrc.getImages().forEach(image => {
+    //   const rng = image.range;
+    //   if (rng.tl && rng.br) {
+    //     if (
+    //       rng.tl.row <= +cellSrc.row &&
+    //       rng.br.row >= +cellSrc.row &&
+    //       rng.tl.col <= +cellSrc.col &&
+    //       rng.br.col >= +cellSrc.col
+    //     ) {
+    //       rng.tl.row += +cellDest.row - +cellSrc.row;
+    //       rng.br.row += +cellDest.row - +cellSrc.row;
+    //     }
+    //   }
+    // });
+
+    // sheetDest.workbook.addImage({
+    //   base64:
+    // })
 
     cellDest.model = storeCellModel;
     // console.log('cellDest.model', cellDest.model);
