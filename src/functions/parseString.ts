@@ -26,3 +26,13 @@ export default function parseString(text: string, context: any = {}) {
     ':$1'
   );
 }
+
+export function parseObject(obj: any, context: any = {}) {
+  let encodeData = JSON.stringify(obj);
+  encodeData = parseString(encodeData, context);
+  try {
+    return JSON.parse(encodeData);
+  } catch (err) {
+    return obj;
+  }
+}

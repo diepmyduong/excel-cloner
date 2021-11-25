@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { Cell, Row, ValueType, Workbook, Worksheet } from 'exceljs';
 import { CellRange } from './cellRange';
 import moment from 'moment';
-import parseString from './functions/parseString';
+import parseString, { parseObject } from './functions/parseString';
 
 /**
  * Callback for iterate cells
@@ -337,6 +337,12 @@ export class WorkSheetHelper {
           cell.value = { formula: cell.value.toString().substr(1) } as any;
         }
       }
+    } else if ((cell.value as any)?.richText) {
+      const rictTextCell = parseObject(cell.value, context);
+      rictTextCell.richText = rictTextCell.richText.filter(
+        (t: any) => !_.isEmpty(t?.text) && t.text != '\n'
+      );
+      cell.value = rictTextCell;
     }
   }
 
